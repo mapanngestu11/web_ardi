@@ -77,7 +77,7 @@
                                 <div class="col-md-6">
                                   <label>Nama Lengkap</label>
                                   <div class="form-group form-input">
-                                    <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="form-control" required="">
+                                    <input type="text" name="nama_warga" placeholder="Nama Lengkap" class="form-control" required="">
                                   </div>
                                 </div>
                               </div>
@@ -95,7 +95,7 @@
                                       <select name="jenis_kelamin" class="form-control" required="">
                                         <option value=""> Pilih </option>
                                         <option value="Laki-Laki"> Laki-Laki </option>
-                                        <option value="Laki-Laki"> Laki-Laki </option>
+                                        <option value="Perempuan"> Perempuan </option>
                                       </select>
                                     </div>
                                     <div class="col-md-6 mt-4">
@@ -113,45 +113,14 @@
                                   </div>
                                 </div>
                               </div>
+
+
                               <div class="row">
-                                <div class="col-md-6">
-                                  <label>Kelurahan</label>
-                                  <div class="form-group form-input">
-                                    <input type="text" name="kelurahan" class="form-control" placeholder="kelurahan" required="">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label>Kecamatan</label>
-                                  <div class="form-group form-input">
-                                    <input type="text" name="kecamatan" class="form-control" placeholder="kecamatan" required="">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label>Kota</label>
-                                  <div class="form-group form-input">
-                                    <input type="text" name="kota" class="form-control" placeholder="Kota" required="">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label>Provinsi</label>
-                                  <div class="form-group form-input">
-                                    <input type="text" name="provinsi" class="form-control" placeholder="Provinsi" required="">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label>Kode Pos</label>
-                                  <div class="form-group form-input">
-                                    <input type="number" name="kode_pos" class="form-control" required="">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
+
+                                <div class="col-md-12">
                                   <label>Telp</label>
                                   <div class="form-input form-group">
-                                    <input type="number" name="telp" class="form-control" required="">
+                                    <input type="number" name="no_hp" class="form-control" required="">
                                   </div>
                                 </div>
                               </div>
@@ -165,7 +134,7 @@
                                 <div class="col-md-6">
                                   <label>Status</label>
                                   <div class="form-input form-group">
-                                    <select class="form-control" name="status" required="">
+                                    <select class="form-control" name="verifikasi" required="">
                                       <option value=""> Pilih </option>
                                       <option value="1"> Sudah Verif </option>
                                       <option value="2"> Pending </option>
@@ -230,13 +199,13 @@
                         $no++;
                         $id_warga           = $row['id_warga'];
                         $nik = $row['nik'];
-                        $nama_lengkap    = $row['nama_lengkap'];
+                        $nama_warga    = $row['nama_warga'];
                         $jenis_kelamin = $row['jenis_kelamin'];
                         ?>
                         <tr>
                           <td><?php echo $no ?></td>
                           <td><?php echo $nik ?></td>
-                          <td><?php echo $nama_lengkap ?></td>
+                          <td><?php echo $nama_warga ?></td>
                           <td><?php echo $jenis_kelamin ?></td>
                           <td>
                             <div class="form-button-action">
@@ -267,20 +236,20 @@
         <!-- modal hapus -->
         <?php foreach ($warga->result_array() as $row) :
           $id_warga = $row['id_warga'];
-          $nama_lengkap = $row['nama_lengkap'];
+          $nama_lengkap = $row['nama_warga'];
           ?>
           <div class="modal fade" id="ModalHapus<?php echo $id_warga; ?>" tabindex="-1" role="dialog" aria-labelledby="">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <!--    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button> -->
-                  <h4 class="modal-title" id="myModalLabel">Hapus User</h4>
+                  <h4 class="modal-title" id="myModalLabel">Hapus Warga</h4>
                 </div>
-                <form class="form-horizontal" action="<?php echo base_url() . 'Admin/User/delete' ?>" method="post">
+                <form class="form-horizontal" action="<?php echo base_url() . 'Admin/Warga/delete' ?>" method="post">
                   <div class="modal-body">
                     <input type="hidden" name="id_warga" value="<?php echo $id_warga; ?>" />
 
-                    <p>Apakah Anda yakin mau menghapus <b><?php echo $nama_lengkap; ?></b> ?</p>
+                    <p>Apakah Anda yakin mau menghapus <b><?php echo $nama_warga; ?></b> ?</p>
 
                   </div>
                   <div class="modal-footer">
@@ -301,15 +270,22 @@
         <!-- modal edit -->
         <?php foreach ($warga->result_array() as $row) :
           $id_warga = $row['id_warga'];
-          $nama_lengkap = $row['nama_lengkap'];
-          // $hak_akses    = $row['hak_akses'];
+          $nama_warga = $row['nama_warga'];
+          $jenis_kelamin = $row['jenis_kelamin'];
+          $alamat = $row['alamat'];
+          $rt = $row['rt'];
+          $rw = $row['rw'];
+          $no_hp = $row['no_hp'];
+          $verifikasi = $row['verifikasi'];
+
+
 
           ?>
           <div class="modal fade " id="ModalEdit<?php echo $id_warga; ?>" role="dialog" aria-hidden="true" data-backdrop="static">>
             <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="myModalLabel1">Update Data User</h5>
+                  <h5 class="modal-title" id="myModalLabel1">Update Data Warga</h5>
                   <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                   </button>
@@ -322,16 +298,91 @@
 
                 <div class="modal-body">
                   <div class="modal-body">
-                    <form action="<?php echo base_url() . 'Admin/User/update'; ?>" method="post">
+                    <form action="<?php echo base_url() . 'Admin/Warga/update'; ?>" method="post">
                       <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
+                          <label>Nik</label>
+                          <div class="form-group form-input">
+                            <input type="text" name="nik" placeholder="NIK" value="<?php echo $nik?>"  class="form-control" required id="nik">
+                            <input type="hidden" name="id_warga" value="<?php echo $id_warga;?>">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
                           <label>Nama Lengkap</label>
                           <div class="form-group form-input">
-                            <input type="text" name="nama_lengkap" value="<?php echo $row['nama_lengkap']; ?>" class="form-control" required>
+                            <input type="text" name="nama_warga"  value="<?php echo $nama_warga?>" class="form-control" required="">
                           </div>
                         </div>
                       </div>
-                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label>Alamat</label>
+                          <div class="form-group form-input">
+                            <textarea class="form-control" name="alamat" rows="5"><?php echo $alamat;?></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label>Jenis Kelamin</label>
+                              <select name="jenis_kelamin" class="form-control" required="">
+                                <option value="<?php echo $jenis_kelamin;?>"> <?php echo $jenis_kelamin;?> </option>
+                                <option value="Laki-Laki"> Laki-Laki </option>
+                                <option value="Perempuan"> Perempuan </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                              <label>RT</label>
+                              <div class="form-group form-input">
+                                <input type="text" name="rt" class="form-control" placeholder="rt" value="<?php echo $rt;?>" required="">
+                              </div>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                              <label>RW</label>
+                              <div class="form-group form-input">
+                                <input type="text" name="rw" class="form-control" value="<?php echo $rw;?>" required="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <label>Telp</label>
+                          <div class="form-input form-group">
+                            <input type="number" name="no_hp" class="form-control" value="<?php echo $no_hp;?>" required="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label>File</label>
+                          <div class="form-input form-group">
+                            <input type="file" name="file" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label>Status</label>
+                          <div class="form-input form-group">
+                            <select class="form-control" name="verifikasi" required="">
+                              <option value="<?php echo $verifikasi;?>"> <?php echo $verifikasi;?> </option>
+                              <option value="1"> Sudah Verif </option>
+                              <option value="2"> Pending </option>
+                              <option value="0"> Tolak </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <label>Nama Petugas</label>
+                          <?php
+                          $nama_user = $this->session->userdata('nama_lengkap');
+
+                          ?>
+                          <input type="text" name="nama_user" class="form-control" value="<?php echo $nama_user;?>" readonly>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="modal-footer">

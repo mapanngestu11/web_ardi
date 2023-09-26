@@ -34,23 +34,5 @@
 			</div>
 		</div>
 
-		<div class="footer-btm py-4 mt-5">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-6">
-					<div class="copyright">
-						&copy; Copyright Reserved to <span class="text-color">Novena</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>
-					</div>
-				</div>
-				
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4">
-					<a class="backtop js-scroll-trigger" href="#top">
-						<i class="icofont-long-arrow-up"></i>
-					</a>
-				</div>
-			</div>
-		</div>
 	</div>
 </footer>

@@ -11,8 +11,8 @@ class Homepage  extends CI_Controller
         $this->load->helper('url');
         $this->load->library('upload');
         $this->load->model('M_login');
-        // $this->load->model('M_tagihan');
-        // $this->load->model('M_pengajuan');
+        $this->load->model('M_bansos');
+        $this->load->model('M_warga');
         // $this->load->model('M_instansi');
 
         if ($this->session->userdata('masuk') != TRUE) {
@@ -25,8 +25,11 @@ class Homepage  extends CI_Controller
     public function index()
     {
 
-        // var_dump($data['pengajuan']);
-        // die;
-        $this->load->view('Admin/Homepage.php');
+        $data['blt'] = $this->M_bansos->jumlah_data_blt()->result();
+        $data['pkh'] = $this->M_bansos->jumlah_data_pkh()->result();
+        $data['bpnt'] = $this->M_bansos->jumlah_data_bpnt()->result();
+        $data['warga'] = $this->M_warga->jumlah_data_warga()->result();
+        
+        $this->load->view('Admin/Homepage.php',$data);
     }
 }

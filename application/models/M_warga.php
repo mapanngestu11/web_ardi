@@ -38,4 +38,11 @@ class M_warga extends CI_Model
         $hsl = $this->db->get('tbl_warga')->result();
         return $hsl;
     }
+    function jumlah_data_warga()
+    {
+        $this->db->select('count(id_warga) as jumlah');
+
+        $hsl = $this->db->get('tbl_warga');
+        return $hsl;
+    }
 }

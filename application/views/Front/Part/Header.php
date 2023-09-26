@@ -42,9 +42,17 @@
 								<li><a class="dropdown-item" href="#">Galeri</a></li>
 							</ul>
 						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="department.html" id="bansos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi Bantuan Sosial <i class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="bansos">
+								<li><a class="dropdown-item" href="#">Bantuan Langsung Tunai</a></li>
+								<li><a class="dropdown-item" href="#">Bantuan Pangan Non Tunai</a></li>
+								<li><a class="dropdown-item" href="#">Program Keluarga Harapan</a></li>
+							</ul>
+						</li>
 
-						<li class="nav-item"><a class="nav-link" href="#">Informasi Bantuan Sosisal</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Warga') ?>">Daftar Warga</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url('Kontak') ?>">Kontak</a></li>
 					</ul>
 				</div>
 			</div>
