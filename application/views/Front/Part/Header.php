@@ -36,18 +36,18 @@
 						</li>
 
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil <i class="icofont-thin-down"></i></a>
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil <i class="icofont-thin-down"></i></a>
 							<ul class="dropdown-menu" aria-labelledby="dropdown02">
-								<li><a class="dropdown-item" href="#">Data Agenda</a></li>
-								<li><a class="dropdown-item" href="#">Galeri</a></li>
+								<li><a class="dropdown-item" href="<?php echo base_url('Agenda') ?>">Data Agenda</a></li>
+								<li><a class="dropdown-item" href="<?php echo base_url('Pegawai') ?>">Data Pegawai</a></li>
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="department.html" id="bansos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi Bantuan Sosial <i class="icofont-thin-down"></i></a>
+							<a class="nav-link dropdown-toggle" href="#" id="bansos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi Bantuan Sosial <i class="icofont-thin-down"></i></a>
 							<ul class="dropdown-menu" aria-labelledby="bansos">
-								<li><a class="dropdown-item" href="#">Bantuan Langsung Tunai</a></li>
-								<li><a class="dropdown-item" href="#">Bantuan Pangan Non Tunai</a></li>
-								<li><a class="dropdown-item" href="#">Program Keluarga Harapan</a></li>
+								<li><a class="dropdown-item" href="<?php echo base_url('Blt') ?>">Bantuan Langsung Tunai</a></li>
+								<li><a class="dropdown-item" href="<?php echo base_url('Bpnt') ?>">Bantuan Pangan Non Tunai</a></li>
+								<li><a class="dropdown-item" href="<?php echo base_url('Pkh') ?>">Program Keluarga Harapan</a></li>
 							</ul>
 						</li>
 

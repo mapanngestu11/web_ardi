@@ -35,7 +35,7 @@ class Kegiatan  extends CI_Controller
 
     public function add()
     {
-     date_default_timezone_set("Asia/Jakarta");
+       date_default_timezone_set("Asia/Jakarta");
         $config['upload_path'] = './assets/upload/'; //path folder
         $config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
         $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
@@ -157,13 +157,13 @@ class Kegiatan  extends CI_Controller
 
           $data = array(
 
-           'nama_kegiatan' => $nama_kegiatan,
-           'isi_kegiatan' => $isi_kegiatan,
-           'status' => $status,
-           'tanggal' => $tanggal,
-           'nama_lengkap' => $nama_lengkap
+             'nama_kegiatan' => $nama_kegiatan,
+             'isi_kegiatan' => $isi_kegiatan,
+             'status' => $status,
+             'tanggal' => $tanggal,
+             'nama_lengkap' => $nama_lengkap
 
-       );
+         );
 
 
 

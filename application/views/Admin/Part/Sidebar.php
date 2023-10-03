@@ -27,6 +27,12 @@
             <span>Data Kegiatan</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('Admin/Pegawai/') ?>">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Data Pegawai</span>
+          </a>
+        </li>
         <hr class="sidebar-divider">
         <div class="sidebar-heading">
           Data Warga

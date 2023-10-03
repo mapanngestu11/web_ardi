@@ -41,7 +41,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				<form id="contact-form" class="contact__form " method="post" action="mail.php">
+				<form class=" " method="post" action="<?php echo base_url('Warga/Add') ?>" enctype="multipart/form-data">
 					<!-- form message -->
 					<div class="row">
 						<div class="col-12">
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 					</div>
-
+					<p><?php echo $this->session->flashdata('msg'); ?></p>
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="form-group">
@@ -80,18 +80,38 @@
 
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>N</label>
-								<input name="nama_warga" id="email" type="text" class="form-control" placeholder="Nama Lengkap">
+								<label>No Handphone</label>
+								<input name="no_hp" id="email" type="text" class="form-control" placeholder="Nomor Handphone">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label>RT</label>
+								<input type="text" name="rt" class="form-control" placeholder="Rt.">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label>RW</label>
+								<input type="text" name="rw" class="form-control" placeholder="Rt.">
 							</div>
 						</div>
 					</div>
 
 					<div class="form-group-2 mb-4">
-						<textarea name="message" id="message" class="form-control" rows="8" placeholder="Your Message"></textarea>
+						<label>Alamat</label>
+						<textarea name="alamat" id="message" class="form-control" rows="8" placeholder="Alamat"></textarea>
+					</div>
+					<div class="form-group-2 mb-4">
+						<label>Upload File</label>
+						<input type="file" name="file" class="form-control">
 					</div>
 
 					<div class="text-center">
-						<input class="btn btn-main btn-round-full" name="submit" type="submit" value="Send Messege"></input>
+						<button type="submit" class="btn btn-main btn-round-full" >Submit</button>
 					</div>
 				</form>
 			</div>

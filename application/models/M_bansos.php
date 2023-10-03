@@ -20,6 +20,37 @@ class M_bansos extends CI_Model
         return $query;
     }
 
+    function tampil_data_blt()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_bansos as a');
+        $this->db->join('tbl_warga as b', 'b.nik = a.nik','left');
+        $this->db->where('a.jenis_bansos','blt');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    function tampil_data_bpnt()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_bansos as a');
+        $this->db->join('tbl_warga as b', 'b.nik = a.nik','left');
+        $this->db->where('a.jenis_bansos','bpnt');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    function tampil_data_pkh()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_bansos as a');
+        $this->db->join('tbl_warga as b', 'b.nik = a.nik','left');
+        $this->db->where('a.jenis_bansos','pkh');
+        $query = $this->db->get();
+        return $query;
+    }
+
+
     function cetak_laporan($bulan)
     {
         $this->db->select('
@@ -87,7 +118,7 @@ class M_bansos extends CI_Model
     }
     function cek_kode_permohonan($kode_permohonan)
     {
-     $this->db->select('
+       $this->db->select('
         a.id_bansos,
         a.nik,
         b.nama_lengkap,
@@ -97,14 +128,14 @@ class M_bansos extends CI_Model
         a.file_pemohon,
         a.keterangan,
         a.file_surat');
-     $this->db->from('tbl_bansos as a');
-     $this->db->join('tbl_warga as b', 'b.nik = a.nik','left');
-     $this->db->where('kode_permohonan',$kode_permohonan);
-     $query = $this->db->get();
-     return $query;
- }
- function cek_ktp($nik)
- {
+       $this->db->from('tbl_bansos as a');
+       $this->db->join('tbl_warga as b', 'b.nik = a.nik','left');
+       $this->db->where('kode_permohonan',$kode_permohonan);
+       $query = $this->db->get();
+       return $query;
+   }
+   function cek_ktp($nik)
+   {
     $this->db->select('*');
     $this->db->from('tbl_warga');
     $this->db->where('status','1');

@@ -35,7 +35,7 @@
 				<div class="contact-block mb-4 mb-lg-0">
 					<i class="icofont-live-support"></i>
 					<h5>Telp.</h5>
-					(021) 55764961
+					0813-1513-7176
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6 col-md-6">

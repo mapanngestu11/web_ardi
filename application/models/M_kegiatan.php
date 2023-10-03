@@ -9,6 +9,14 @@ class M_kegiatan extends CI_Model
         return $this->db->get('tbl_kegiatan');
     }
 
+    function tampil_data_home()
+    {   
+        $this->db->order_by('id_kegiatan','DESC');
+        $this->db->where('status','1');
+        return $this->db->get('tbl_kegiatan');
+    }
+
+
     function input_data($data, $table)
     {
         $this->db->insert($table, $data);
